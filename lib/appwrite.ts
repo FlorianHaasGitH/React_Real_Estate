@@ -44,10 +44,9 @@ export async function login() {
     if(!session) throw new Error('Failed to create a session');
     return true;
 
-    
+
   } catch (error) {
     console.error(error);
     return false
   }
-
 }
