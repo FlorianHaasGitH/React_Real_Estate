@@ -6,10 +6,17 @@ import { TouchableOpacity } from "react-native";
 
 import images from "@/constants/images";
 import icons from "@/constants/icons";
+import { login } from "@/lib/appwrite";
 
 const SignIn = () => {
-  const handleLogin = () => {
-    // Implement Google Sign In
+  const handleLogin = async () => {
+    const result = await login();
+
+    if (result) {
+      console.log("Login successful");
+    } else {
+      console.log("Login failed");
+    }
   };
 
   return (
