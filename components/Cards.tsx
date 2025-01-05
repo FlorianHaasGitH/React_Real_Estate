@@ -1,15 +1,23 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import { Image } from "react-native";
+import images from "@/constants/images";
 
-export const FeaturedCard = () => {
+interface Props {
+  onPress?: () => void;
+}
+
+export const FeaturedCard = ({ onPress }: Props) => {
   return (
-    <View>
-      <Text>Featured</Text>
-    </View>
+    <TouchableOpacity
+      onPress={onPress}
+      className="flex flex-col items-start q-60 h-80 relative"
+    >
+      <Image source={images.japan} className="size-full rounded-2xl" />
+    </TouchableOpacity>
   );
 };
 
-export const Card = () => {
+export const Cards = () => {
   return (
     <View>
       <Text>Card</Text>
